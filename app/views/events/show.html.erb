@@ -1,3 +1,7 @@
 events#show page
 
 <h1><%= @event.name %> </h1>
+
+<%= render 'single_event', location: @event %>
+<%= link_to 'Edit', edit_event_path %> | <%= link_to 'Delete', event_path(@event), method: :delete, data: {confirm: "This cannot be reversed, are you sure you want to delete '#{@event.name}'?"} %> |
+<%= link_to 'Main Page', events_path %>

@@ -30,8 +30,10 @@ Location.create(
 20.times do
 
   Event.create(
-    name: FFaker::Sport.name,
-    date: ((rand + 0.5) * 20).days.ago,
+    name: Faker::Food.spice,
+    city: 'Canada',
+    date: Faker::Date.between_except(1.year.ago, 1.year.from_now, Date.today),
+    capacity: ((rand + 0.5)*20)
   )
 
 end

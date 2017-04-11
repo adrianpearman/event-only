@@ -1,13 +1,26 @@
 events#index page
 
-<h1>Events</h1>
+<h1>Quantity</h1>
 
 <% @events.each do |current_event| %>
   <div class="events">
-    <h3><%= current_event.name %></h3>
-    <h4>Event: <%= current_event.city%></h4>
-    <%= current_event.date %><br />
-    <%= current_event.capacity %><br />
-  </div>
+    <h3>Event: <%= current_event.name %></h3>
+      <p>
+      Country: <%= current_event.city%></h4>
+      </p>
 
+      <p>
+      Date: <%= current_event.date %><br />
+      </p>
+
+      <p>
+      Quantity: <%= current_event.capacity %><br />
+      </p>
+
+    <p><%= link_to 'View Spice', event_path(current_event) %></p>
+
+  </div>
   <% end %>
+
+
+    <%= link_to "New Spice", new_event_path %>
