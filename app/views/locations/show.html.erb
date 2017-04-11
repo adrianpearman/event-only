@@ -9,4 +9,8 @@ locations#show page
   <%= link_to image_tag(@location.image, class: "location"), location_path(@location) %>
 </div> -->
 
+<!-- to show a single location -->
 <%= render 'single_location', location: @location %>
+
+<!-- to edit and delete the location -->
+<%= link_to 'Edit', edit_location_path %> | <%= link_to 'Delete', location_path(@location), method: :delete, data: {confirm: "Are you sure you want to delete the location '#{@location.name}'? This cannot be undone!"} %>
